@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monal Tech — Secure Today for a Better Tomorrow</title>
+  <meta name="description" content="Monal Tech delivers cybersecurity products, 24/7 Security Operations Center monitoring, security audits, training and consultancy for organizations across Nepal and beyond." />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 29 9 29 23 16 30 3 23 3 9Z' fill='%23060A12' stroke='%232DE0C2' stroke-width='2'/%3E%3Cpath d='M10 16 14 20 22 11' fill='none' stroke='%232DE0C2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2 L29 9 V23 L16 30 L3 23 V9 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M10 16 L14 20 L22 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo__text">MONAL<span class="logo__accent">TECH</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="index.html#top" class="nav__link">Home</a></li>
+          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="index.html#products" class="nav__link">Products</a></li>
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#testimonials" class="nav__link">Insights</a></li>
+          <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+          <li><a href="login.html" class="nav__link">Login</a></li>
+        </ul>
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta">Talk to an Expert</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> CYBERSECURITY &middot; KATHMANDU, NEPAL</p>
+          <h1 class="hero__title">
+            Secure today<br />
+            for a <span class="text-accent">better tomorrow</span>
+          </h1>
+          <p class="hero__lead">
+            Monal Tech helps organizations detect threats, close vulnerabilities and
+            build security that scales with the business — backed by a Security
+            Operations Center that never clocks off.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#services" class="btn btn--primary">
+              Explore our services
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost">Request a security audit</a>
+          </div>
+
+          <dl class="hero__stats">
+            <div class="stat">
+              <dt class="stat__value"><span class="js-count" data-count="10">0</span>+</dt>
+              <dd class="stat__label">Years in cyber defense</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__value"><span class="js-count" data-count="500">0</span>+</dt>
+              <dd class="stat__label">Organizations protected</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__value"><span class="js-count" data-count="24">0</span>/7</dt>
+              <dd class="stat__label">SOC monitoring</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__value">2022</dt>
+              <dd class="stat__label">Huawei ICT Award winner</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="radar" id="radar">
+            <div class="radar__ring radar__ring--1"></div>
+            <div class="radar__ring radar__ring--2"></div>
+            <div class="radar__ring radar__ring--3"></div>
+            <div class="radar__crosshair radar__crosshair--h"></div>
+            <div class="radar__crosshair radar__crosshair--v"></div>
+            <div class="radar__sweep"></div>
+            <div class="radar__blips" id="radarBlips"></div>
+            <div class="radar__core"></div>
+          </div>
+          <div class="radar__readout">
+            <span class="radar__readout-dot"></span>
+            <span class="radar__readout-label">Threats neutralized this session</span>
+            <span class="radar__readout-value" id="threatCounter">000</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ EXPERTISE STRIP ============ -->
+    <section class="expertise">
+      <div class="container expertise__grid">
+
+        <article class="expertise__item reveal">
+          <div class="expertise__icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Penetration testing</h3>
+          <p>Simulated, controlled attacks that uncover real-world weaknesses in your systems before someone else finds them.</p>
+        </article>
+
+        <article class="expertise__item reveal">
+          <div class="expertise__icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.5 11l1.5 1.5L14 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Cyber threat hunting</h3>
+          <p>Proactive investigation for threats that have already slipped past your defenses and are sitting quietly inside your network.</p>
+        </article>
+
+        <article class="expertise__item reveal">
+          <div class="expertise__icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 11l3-3 2.5 2.5L16 6.5l2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Security Operations Center</h3>
+          <p>A dedicated SOC team watching your most critical systems around the clock — detection, alerting and response, always on.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> WHAT WE DO</p>
+          <h2>End-to-end security, built around your business</h2>
+          <p class="section-head__lead">
+            From the tools that monitor your infrastructure to the people who respond
+            when something goes wrong — we cover the full security lifecycle.
+          </p>
+        </header>
+
+        <div class="services__grid">
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3 20 6 V12 C20 17 16.5 20.5 12 22 7.5 20.5 4 17 4 12 V6 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__tag">01</span>
+            <h3>Cybersecurity products</h3>
+            <p>Industry-leading tooling for SIEM, UEBA, SOAR, threat intelligence and vulnerability assessment — the infrastructure security foundation your stack needs.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6.5 11.5l2.5-3 2 2.5 2.5-3.5 2.5 3.5 2-1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__tag">02</span>
+            <h3>Security Operations Center</h3>
+            <p>Continuous monitoring from a team of cybersecurity professionals — so incidents are caught and contained before they become headlines.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M9 3h6v2H9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.5l2 2 4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__tag">03</span>
+            <h3>Security audit</h3>
+            <p>A full assessment of your IT and security posture against best-practice standards, with a clear path to compliance.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3 21 7.5 12 12 3 7.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M6 10v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__tag">04</span>
+            <h3>Cybersecurity training</h3>
+            <p>Hands-on, practical sessions delivered by certified, experienced trainers — built to raise the skill level of your whole team.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c0-3.3 3.4-5.5 7.5-5.5s7.5 2.2 7.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17 4.5c1.5.5 2.5 1.8 2.5 3.5S18.5 11 17 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <span class="service-card__tag">05</span>
+            <h3>Cybersecurity consultancy</h3>
+            <p>On-call expertise for incidents, architecture reviews and security strategy — call us before the breach, not after.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="3" width="16" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="11" width="16" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/><path d="M8 6h.01M8 14h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 20h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <span class="service-card__tag">06</span>
+            <h3>Security devices</h3>
+            <p>Sourcing, configuration and deployment of the hardware your infrastructure needs to hold the line.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APPROACH / WHY US ============ -->
+    <section class="approach" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> ABOUT MONAL TECH</p>
+          <h2>Protecting you from the dark side of cyberspace</h2>
+          <p class="section-head__lead">
+            Founded to raise the standard of IT security, network security,
+            infrastructure security and everyday cyber hygiene across organizations
+            in Nepal and beyond.
+          </p>
+        </header>
+
+        <div class="approach__grid">
+          <article class="approach__col reveal">
+            <span class="approach__index">01</span>
+            <h3>Our experience</h3>
+            <p>Experts from across the industry working together to lead the security market — locally and internationally.</p>
+            <ul class="tick-list">
+              <li>Cybersecurity expert resources</li>
+              <li>International corporate collaboration</li>
+              <li>Cyber solutions, training &amp; infrastructure security</li>
+            </ul>
+          </article>
+
+          <article class="approach__col reveal">
+            <span class="approach__index">02</span>
+            <h3>Our approach</h3>
+            <p>A co-managed model: we monitor your most critical, 24/7-sensitive assets while your in-house team covers the rest — better coverage, better budget.</p>
+            <ul class="tick-list">
+              <li>Product security</li>
+              <li>System security</li>
+              <li>Operational security</li>
+            </ul>
+          </article>
+
+          <article class="approach__col reveal">
+            <span class="approach__index">03</span>
+            <h3>Why Monal Tech</h3>
+            <p>Built on a vision to improve IT security, network security, infrastructure security and cyber hygiene at every organization we work with.</p>
+            <ul class="tick-list">
+              <li>Trusted partners</li>
+              <li>Experienced people</li>
+              <li>Quality delivery</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="products" id="products">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> OUR PRODUCTS</p>
+          <h2>Tools built from what we learn in the field</h2>
+          <p class="section-head__lead">
+            Every product we build solves a problem we've seen first-hand —
+            in audits, in the SOC, and in the field.
+          </p>
+        </header>
+
+        <div class="products__grid">
+
+          <article class="product-card reveal">
+            <div class="product-card__visual">
+              <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="1" width="198" height="138" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.25" stroke-width="1"/>
+                <rect x="20" y="20" width="160" height="14" rx="3" fill="currentColor" fill-opacity="0.12"/>
+                <rect x="20" y="42" width="100" height="8" rx="2" fill="currentColor" fill-opacity="0.18"/>
+                <rect x="20" y="58" width="130" height="8" rx="2" fill="currentColor" fill-opacity="0.18"/>
+                <rect x="20" y="74" width="80" height="8" rx="2" fill="currentColor" fill-opacity="0.18"/>
+                <circle cx="160" cy="100" r="22" fill="none" stroke="currentColor" stroke-width="2" class="pulse-ring"/>
+                <circle cx="160" cy="100" r="3" fill="currentColor"/>
+                <path d="M150 100h-4M165 90l-2.5 2.5M165 110l-2.5-2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">VULNERABILITY ASSESSMENT</span>
+              <h3>MakeMyScan</h3>
+              <p>Scans websites and infrastructure for security flaws, helping you find and fix risks before attackers find them first.</p>
+              <a href="#" class="link-arrow">
+                Learn more
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-card__visual">
+              <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="1" width="198" height="138" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.25" stroke-width="1"/>
+                <rect x="20" y="18" width="60" height="76" rx="4" fill="currentColor" fill-opacity="0.10"/>
+                <rect x="30" y="30" width="40" height="5" rx="1.5" fill="currentColor" fill-opacity="0.3"/>
+                <rect x="30" y="42" width="40" height="5" rx="1.5" fill="currentColor" fill-opacity="0.3"/>
+                <rect x="30" y="54" width="28" height="5" rx="1.5" fill="currentColor" fill-opacity="0.3"/>
+                <rect x="92" y="34" width="88" height="60" rx="6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.45"/>
+                <circle cx="108" cy="50" r="4" fill="currentColor"/>
+                <path d="M120 48h44M120 58h32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/>
+                <path d="M104 74h60" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" stroke-opacity="0.4"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">AI WORKSPACE</span>
+              <h3>Monal Notebook</h3>
+              <p>An AI-powered workspace — upload PDFs and documents to instantly chat with, summarize, and extract key information from your files.</p>
+              <a href="#" class="link-arrow">
+                Learn more
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="products__cta reveal">
+          <a href="#" class="btn btn--ghost">View all products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AWARD BANNER ============ -->
+    <section class="award">
+      <div class="container award__inner reveal">
+        <div class="award__icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12.5L7 21l5-2.5L17 21l-1.5-8.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 8l1.8 1.8L14.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="award__text">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> RECOGNITION</p>
+          <h2>Huawei Startup ICT Award 2022 — Winner</h2>
+          <p>Monal Tech took home the South Asia Startup ICT Award at the seventh annual Infodevelopers ICT Award ceremony, held in Kathmandu in December 2022.</p>
+        </div>
+        <a href="https://monaltech.com/blog/general-3/monal-tech-huawei-startup-ict-awards-2022-winner-27" class="link-arrow" target="_blank" rel="noopener">
+          Read the story
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> CLIENT FEEDBACK</p>
+          <h2>What it's like to work with us</h2>
+        </header>
+
+        <div class="testimonial-slider reveal">
+          <div class="testimonial-track" id="testimonialTrack">
+
+            <article class="testimonial">
+              <p class="testimonial__quote">
+                "Monal Tech's team consistently delivers the right solution exactly
+                when we need it. Their expertise and responsiveness have made a real
+                difference for our business."
+              </p>
+              <div class="testimonial__author">
+                <span class="testimonial__avatar">DK</span>
+                <div>
+                  <span class="testimonial__name">Dhruba Kuwar</span>
+                  <span class="testimonial__role">CEO, Bazaar International</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial__quote">
+                "Their cybersecurity training stands apart from anything else
+                available locally — hands-on, practical sessions our team could
+                apply immediately. A great partner for our training programs."
+              </p>
+              <div class="testimonial__author">
+                <span class="testimonial__avatar">AP</span>
+                <div>
+                  <span class="testimonial__name">Adarsh Pokharel</span>
+                  <span class="testimonial__role">CEO, Job Axle</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial__quote">
+                "Since onboarding Monal Tech's SOC, our ability to monitor, detect
+                and respond to threats in real time has improved dramatically —
+                critical for protecting our financial systems."
+              </p>
+              <div class="testimonial__author">
+                <span class="testimonial__avatar">AL</span>
+                <div>
+                  <span class="testimonial__name">Ashok Lamsal</span>
+                  <span class="testimonial__role">Senior Manager, Credit Information Bureau of Nepal</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="testimonial-controls">
+            <button class="slider-btn" id="prevBtn" aria-label="Previous testimonial">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn" id="nextBtn" aria-label="Next testimonial">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLIENT MARQUEE ============ -->
+    <section class="clients">
+      <p class="eyebrow center reveal"><span class="eyebrow__bracket">//</span> TRUSTED BY TEAMS ACROSS NEPAL</p>
+      <div class="marquee">
+        <div class="marquee__track" id="marqueeTrack">
+          <span class="marquee__item">Job Axle</span>
+          <span class="marquee__item">Sindhu Bikas Bank</span>
+          <span class="marquee__item">Bazaar International</span>
+          <span class="marquee__item">NARMIN</span>
+          <span class="marquee__item">Global IME Bank</span>
+          <span class="marquee__item">NTA</span>
+          <span class="marquee__item">TITI</span>
+          <span class="marquee__item">Credit Information Bureau</span>
+          <span class="marquee__item">Yeti Airlines</span>
+          <span class="marquee__item">MuAN</span>
+          <span class="marquee__item">Era Hospital</span>
+          <span class="marquee__item">NTC TTRC</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / CTA ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__grid">
+
+        <div class="contact__info reveal">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> GET IN TOUCH</p>
+          <h2>Talk to our team about your security needs</h2>
+          <p>
+            Whether you need a one-off audit, ongoing SOC coverage, or a training
+            program for your team — tell us what you're working with and we'll
+            point you in the right direction.
+          </p>
+
+          <ul class="contact-details">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span>Chabahil, Kathmandu, Nepal</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:info@monaltech.com">info@monaltech.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v3a2 2 0 01-2 2C9.5 20 4 14.5 4 7a2 2 0 011-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <a href="tel:+97714572116">+977-1-4572116</a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+              <span class="form-field__error" data-error-for="name"></span>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              <span class="form-field__error" data-error-for="email"></span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name (optional)" />
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about what you need..." required></textarea>
+            <span class="form-field__error" data-error-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">
+            Send message
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+
+      <div class="footer__col footer__col--brand">
+        <a href="#top" class="logo">
+          <svg class="logo__mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 2 L29 9 V23 L16 30 L3 23 V9 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M10 16 L14 20 L22 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo__text">MONAL<span class="logo__accent">TECH</span></span>
+        </a>
+        <p class="footer__tagline">Secure today, for a better tomorrow.</p>
+        <div class="footer__socials">
+          <a href="https://monaltech.com/website/social/facebook" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 9h2V6h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+          <a href="https://monaltech.com/website/social/twitter" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+          <a href="https://monaltech.com/website/social/linkedin" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 10v6M7 7.5v.01M11 16v-3.5c0-1.4 1-2.5 2.3-2.5S15.5 11.1 15.5 12.5V16M11 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <a href="https://monaltech.com/website/social/github" class="social-link" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a9 9 0 00-2.8 17.6c.4.1.6-.2.6-.4v-1.6c-2.5.3-3-1.2-3.2-1.6-.2-.4-.7-1.4-1.2-1.7-.4-.2-.9-.7 0-.7.8 0 1.4.8 1.6 1.1.9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.7-1.3-2.4-.3-4.2-1.4-4.2-3.9 0-.9.3-1.6.8-2.2-.1-.3-.4-1.1.1-2.3 0 0 .8-.3 2.5.9a8.4 8.4 0 014.4 0c1.7-1.2 2.5-.9 2.5-.9.5 1.2.2 2 .1 2.3.5.6.8 1.3.8 2.2 0 2.5-1.8 3.6-4.2 3.9.4.3.7 1 .7 2v2.4c0 .2.2.5.6.4A9 9 0 0012 3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></a>
+          <a href="https://monaltech.com/website/social/youtube" class="social-link" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M11 10l3 2-3 2v-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+          <a href="https://monaltech.com/website/social/instagram" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#testimonials">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Cybersecurity products</a></li>
+          <li><a href="#services">Security Operations Center</a></li>
+          <li><a href="#services">Security audit</a></li>
+          <li><a href="#services">Cybersecurity training</a></li>
+          <li><a href="#services">Cybersecurity consultancy</a></li>
+          <li><a href="#services">Security devices</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Protect</h4>
+        <ul>
+          <li><a href="#">Applications</a></li>
+          <li><a href="#">Databases</a></li>
+          <li><a href="#">Cloud</a></li>
+          <li><a href="#">IoT devices</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li>Chabahil, Kathmandu, Nepal</li>
+          <li><a href="mailto:info@monaltech.com">info@monaltech.com</a></li>
+          <li><a href="tel:+97714572116">+977-1-4572116</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year"></span> Monal Tech. All rights reserved.</p>
+      <a href="https://monaltech.com/privacy" target="_blank" rel="noopener">Legal &amp; Privacy</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

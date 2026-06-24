@@ -1,0 +1,12 @@
+{
+  "name": "monal-tech-portal",
+  "version": "1.0.0",
+  "description": "Monal Tech static frontend with login backend and admin dashboard.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.4"
+  }
+}

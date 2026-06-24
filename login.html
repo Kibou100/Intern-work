@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Monal Tech</title>
+  <meta name="description" content="Login to Monal Tech secure portal." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 29 9 29 23 16 30 3 23 3 9Z' fill='%23060A12' stroke='%232DE0C2' stroke-width='2'/%3E%3Cpath d='M10 16 14 20 22 11' fill='none' stroke='%232DE0C2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#login">Skip to login form</a>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html#top" class="logo">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2 L29 9 V23 L16 30 L3 23 V9 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M10 16 L14 20 L22 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo__text">MONAL<span class="logo__accent">TECH</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="index.html#top" class="nav__link">Home</a></li>
+          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="index.html#products" class="nav__link">Products</a></li>
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#testimonials" class="nav__link">Insights</a></li>
+          <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+          <li><a href="login.html" class="nav__link">Login</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn--primary btn--sm nav__cta">Talk to an Expert</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="login-page">
+      <div class="container login-page__inner">
+        <div class="login-page__hero reveal">
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> SECURE PORTAL ACCESS</p>
+          <h1>Login to Monal Tech</h1>
+          <p>Access your dashboard, manage requests, and view your organization’s security status.</p>
+        </div>
+
+        <form class="login-form reveal" id="loginForm" method="post" action="/api/login" novalidate>
+          <div class="login-form__header">
+            <h2>Welcome back</h2>
+            <p>Enter your details below to continue.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" placeholder="you@company.com" required />
+            <span class="form-field__error" data-error-for="email"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" placeholder="Your password" required />
+            <span class="form-field__error" data-error-for="password"></span>
+          </div>
+
+          <div class="login-form__actions">
+            <label class="checkbox-field">
+              <input type="checkbox" name="remember" />
+              Remember me
+            </label>
+            <a href="#" class="link-arrow">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">
+            Sign in
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="login-form__hint">Demo admin login: <strong>admin@monaltech.com</strong> / <strong>SecurePass123</strong></p>
+          <p class="form-status" id="loginStatus" role="status"></p>
+
+          <p class="login-form__footer">
+            Don’t have an account? <a href="index.html">Visit Monal Tech</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

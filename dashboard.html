@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Monal Tech</title>
+  <meta name="description" content="Admin dashboard for Monal Tech portal." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 29 9 29 23 16 30 3 23 3 9Z' fill='%23060A12' stroke='%232DE0C2' stroke-width='2'/%3E%3Cpath d='M10 16 14 20 22 11' fill='none' stroke='%232DE0C2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#dashboardMain">Skip to dashboard</a>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="dashboard.html#dashboardMain" class="logo">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2 L29 9 V23 L16 30 L3 23 V9 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M10 16 L14 20 L22 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo__text">MONAL<span class="logo__accent">TECH</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="dashboard.html#overview" class="nav__link">Overview</a></li>
+          <li><a href="dashboard.html#activity" class="nav__link">Activity</a></li>
+          <li><a href="dashboard.html#teams" class="nav__link">Teams</a></li>
+          <li><a href="dashboard.html#alerts" class="nav__link">Alerts</a></li>
+          <li><a href="#" id="logoutLink" class="nav__link">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="dashboardMain">
+    <section class="dashboard-hero">
+      <div class="container dashboard-hero__inner">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__bracket">//</span> ADMIN PORTAL</p>
+          <h1>Monal Tech Admin Dashboard</h1>
+          <p>Monitor active sessions, incident alerts, and team assignments from one secure portal.</p>
+        </div>
+        <div class="dashboard-summary">
+          <div class="dashboard-card dashboard-card--mini">
+            <p class="dashboard-card__label">Active users</p>
+            <p class="dashboard-card__value" id="activeUsers">42</p>
+          </div>
+          <div class="dashboard-card dashboard-card--mini">
+            <p class="dashboard-card__label">Open alerts</p>
+            <p class="dashboard-card__value" id="openAlerts">7</p>
+          </div>
+          <div class="dashboard-card dashboard-card--mini">
+            <p class="dashboard-card__label">Pending requests</p>
+            <p class="dashboard-card__value" id="pendingRequests">12</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid container">
+      <article class="dashboard-panel" id="overview">
+        <div class="panel-header">
+          <h2>Operations overview</h2>
+          <p>Latest metrics for your security operations center.</p>
+        </div>
+        <div class="panel-grid">
+          <div class="metric-card">
+            <span>Threats blocked</span>
+            <strong>1,284</strong>
+          </div>
+          <div class="metric-card">
+            <span>Incidents escalated</span>
+            <strong>18</strong>
+          </div>
+          <div class="metric-card">
+            <span>Response SLA</span>
+            <strong>97%</strong>
+          </div>
+          <div class="metric-card">
+            <span>Team uptime</span>
+            <strong>99.99%</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="dashboard-panel" id="activity">
+        <div class="panel-header">
+          <h2>Recent activity</h2>
+          <p>Latest actions from the SOC and admin team.</p>
+        </div>
+        <ul class="activity-list" id="activityList"></ul>
+      </article>
+
+      <article class="dashboard-panel" id="teams">
+        <div class="panel-header">
+          <h2>Team status</h2>
+          <p>Current shift coverage and on-call assignments.</p>
+        </div>
+        <div class="team-grid" id="teamGrid"></div>
+      </article>
+
+      <article class="dashboard-panel" id="alerts">
+        <div class="panel-header">
+          <h2>Top alerts</h2>
+          <p>High-priority incidents requiring your attention.</p>
+        </div>
+        <div class="alerts-grid" id="alertsGrid"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('mt-admin-token');
+      const logoutLink = document.getElementById('logoutLink');
+      const redirectToLogin = () => window.location.href = 'login.html';
+      if (!token) return redirectToLogin();
+
+      logoutLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        localStorage.removeItem('mt-admin-token');
+        fetch('/api/logout', { method: 'POST', credentials: 'same-origin' });
+        redirectToLogin();
+      });
+
+      const activity = [
+        'SOC analyst initiated threat triage',
+        'New vulnerability scan scheduled',
+        'Customer request submitted for audit review',
+        'Alerts updated for endpoint protection',
+        'Backup verification completed',
+      ];
+      const team = [
+        { name: 'Aarav', role: 'SOC Lead', status: 'Online' },
+        { name: 'Maya', role: 'Incident Responder', status: 'On call' },
+        { name: 'Nisha', role: 'Threat Hunter', status: 'Reviewing logs' },
+      ];
+      const alerts = [
+        { title: 'Possible lateral movement detected', severity: 'High' },
+        { title: 'Suspicious login from Nepal', severity: 'Medium' },
+        { title: 'Expired certificate alert', severity: 'Low' },
+      ];
+
+      const activityList = document.getElementById('activityList');
+      const teamGrid = document.getElementById('teamGrid');
+      const alertsGrid = document.getElementById('alertsGrid');
+
+      activity.forEach(text => {
+        const li = document.createElement('li');
+        li.className = 'activity-list__item';
+        li.textContent = text;
+        activityList.appendChild(li);
+      });
+
+      team.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'team-card';
+        card.innerHTML = `<strong>${member.name}</strong><span>${member.role}</span><em>${member.status}</em>`;
+        teamGrid.appendChild(card);
+      });
+
+      alerts.forEach(item => {
+        const card = document.createElement('div');
+        card.className = `alert-card alert-card--${item.severity.toLowerCase()}`;
+        card.innerHTML = `<strong>${item.title}</strong><span>${item.severity} priority</span>`;
+        alertsGrid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
